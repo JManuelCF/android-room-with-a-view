@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         // The onChanged() method fires when the observed data changes and the activity is
         // in the foreground.
         mWordViewModel.getAllWords().observe(this, new Observer<List<Word>>() {
+
             @Override
             public void onChanged(@Nullable final List<Word> words) {
                 // Update the cached copy of the words in the adapter.
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, NewWordActivity.class);
@@ -80,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
                 ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+
             @Override
             public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
                 return false;
@@ -93,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         }).attachToRecyclerView(recyclerView);
 
         adapter.setOnItemClickListener(new WordListAdapter.OnItemClickListener(){
+
             @Override
             public void onItemClick(Word word) {
                 Intent intent = new Intent(MainActivity.this,EditWordActivity.class);

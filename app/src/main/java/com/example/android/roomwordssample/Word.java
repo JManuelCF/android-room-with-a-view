@@ -38,8 +38,10 @@ public class Word {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     private int id;
+
     @ColumnInfo(name = "word")
     private String mWord;
+
 
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB, name = "image")
     private byte[] image;
@@ -55,17 +57,21 @@ public class Word {
         return this.mWord;
     }
 
+
     public int getId() {
         return id;
     }
+
 
     public void setId(int id) {
         this.id = id;
     }
 
+
     public byte[] getImage() {
         return image;
     }
+
 
     public void setImage(byte[] image) {
         this.image = image;
